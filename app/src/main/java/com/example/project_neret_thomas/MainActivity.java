@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }}
 
     private List<Pokemon> getDataFromCache() {
-       String jsonPokemon= sharedPreferences.getString("jsonPokemonList", null);
+       String jsonPokemon= sharedPreferences.getString(Constant.KEY_POKEMON_LIST, null);
        if (jsonPokemon==null) {
            return null;}else {
            Type listType = new TypeToken<List<Pokemon>>(){}.getType();
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         String jsonString = gson.toJson(pokemonList);
         sharedPreferences
                 .edit()
-                .putString("jsonPokemonList", jsonString)
+                .putString(Constant.KEY_POKEMON_LIST, jsonString)
                 .apply();
         Toast.makeText(getApplicationContext(),"List Sauvegarde",Toast.LENGTH_SHORT).show();
     }
