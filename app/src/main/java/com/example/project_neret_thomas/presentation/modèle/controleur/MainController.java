@@ -85,9 +85,9 @@ this.view = mainActivity;
 
 
     }
-    public  void onitemclick(Pokemon pokemon)
+    public  void onItemClick(Pokemon pokemon)
     {
-
+     view.navigateToDetails(pokemon);
 
     }
     public  void onButtonBClick (){

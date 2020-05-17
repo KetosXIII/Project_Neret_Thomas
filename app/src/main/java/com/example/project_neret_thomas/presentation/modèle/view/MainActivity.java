@@ -4,30 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.example.project_neret_thomas.Constant;
 import com.example.project_neret_thomas.R;
 import com.example.project_neret_thomas.Singletons;
-import com.example.project_neret_thomas.data.PokeApi;
 import com.example.project_neret_thomas.presentation.modèle.controleur.MainController;
 import com.example.project_neret_thomas.presentation.modèle.modèle.Pokemon;
-import com.example.project_neret_thomas.presentation.modèle.modèle.RestPokemonResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
+import java.security.Policy;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,8 +49,21 @@ public class MainActivity extends AppCompatActivity {
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        mAdapter = new ListAdapteur(pokemonList);
+            }
+        });
+
+        mAdapter = new ListAdapteur(pokemonList, new ListAdapteur.OnItemClickListener(){
+            @Override
+            public void  onItemClick(Pokemon item){
+                controller.onItemClick(item);
+
+        }
+
+        });
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -71,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
     public void showError(){
         Toast.makeText(getApplicationContext(),"API Error",Toast.LENGTH_SHORT).show();
 
+    }
+
+    public void navigateToDetails(Pokemon pokemon) {
+        Toast.makeText(getApplicationContext(),"TODO NAVIGATE",Toast.LENGTH_SHORT).show();
     }
 }
