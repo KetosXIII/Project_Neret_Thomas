@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void navigateToDetails(Pokemon pokemon) {
         Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
-        myIntent.putExtra("pokemonKeyname", Singletons.getGson().toJson(pokemon));
+        myIntent.putExtra("pokemonKey", Singletons.getGson().toJson(pokemon));
 
         MainActivity.this.startActivity(myIntent);
         Toast.makeText(getApplicationContext(),"TODO NAVIGATE",Toast.LENGTH_SHORT).show();
