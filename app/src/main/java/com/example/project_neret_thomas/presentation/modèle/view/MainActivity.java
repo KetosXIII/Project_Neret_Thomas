@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
  public void showList(List<Pokemon>pokemonList){
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
 
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -75,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToDetails(Pokemon pokemon) {
+        Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+        myIntent.putExtra("pokemonKeyname", Singletons.getGson().toJson(pokemon));
+
+        MainActivity.this.startActivity(myIntent);
         Toast.makeText(getApplicationContext(),"TODO NAVIGATE",Toast.LENGTH_SHORT).show();
     }
 }
