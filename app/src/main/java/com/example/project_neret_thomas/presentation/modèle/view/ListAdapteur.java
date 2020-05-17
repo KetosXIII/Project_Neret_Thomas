@@ -1,4 +1,4 @@
-package com.example.project_neret_thomas;
+package com.example.project_neret_thomas.presentation.modèle.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,9 +7,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project_neret_thomas.R;
+import com.example.project_neret_thomas.presentation.modèle.modèle.Pokemon;
+
 import java.util.List;
 
-class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
+public class ListAdapteur extends RecyclerView.Adapter<ListAdapteur.ViewHolder>
 
     {
         private List<Pokemon> values;
@@ -42,14 +45,14 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
     }
 
         // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List < Pokemon > myDataset) {
+    public ListAdapteur(List < Pokemon > myDataset) {
         values = myDataset;
     }
 
         // Create new views (invoked by the layout manager)
         @Override
-        public MyAdapter.ViewHolder onCreateViewHolder (ViewGroup parent,
-                                                        int viewType){
+        public ListAdapteur.ViewHolder onCreateViewHolder (ViewGroup parent,
+                                                           int viewType){
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());

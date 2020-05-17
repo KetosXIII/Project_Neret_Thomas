@@ -1,8 +1,9 @@
-package com.example.project_neret_thomas;
+package com.example.project_neret_thomas.data;
+
+import com.example.project_neret_thomas.presentation.modèle.modèle.RestPokemonResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface PokeApi {
     @GET("/api/v2/pokemon")

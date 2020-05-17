@@ -1,4 +1,4 @@
-package com.example.project_neret_thomas;
+package com.example.project_neret_thomas.presentation.modèle.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,16 +7,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.ListAdapter;
-import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.project_neret_thomas.Constant;
+import com.example.project_neret_thomas.R;
+import com.example.project_neret_thomas.data.PokeApi;
+import com.example.project_neret_thomas.presentation.modèle.modèle.Pokemon;
+import com.example.project_neret_thomas.presentation.modèle.modèle.RestPokemonResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private static final String BASE_URL = "https://pokeapi.co/";
     private RecyclerView recyclerView;
-    private MyAdapter mAdapter;
+    private ListAdapteur mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private   SharedPreferences sharedPreferences;
     private Gson gson;
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new MyAdapter(pokemonList);
+        mAdapter = new ListAdapteur(pokemonList);
         recyclerView.setAdapter(mAdapter);
     }
 

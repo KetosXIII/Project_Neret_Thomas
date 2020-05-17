@@ -1,4 +1,6 @@
-package com.example.project_neret_thomas;
+package com.example.project_neret_thomas.presentation.modèle.modèle;
+
+import com.example.project_neret_thomas.presentation.modèle.modèle.Pokemon;
 
 import java.util.List;
 
