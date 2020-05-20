@@ -3,6 +3,7 @@ package com.example.project_neret_thomas.presentation.modèle.view;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 

@@ -1,12 +1,16 @@
 package com.example.project_neret_thomas.presentation.modèle.view;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.project_neret_thomas.Constant;
 import com.example.project_neret_thomas.R;
 import com.example.project_neret_thomas.presentation.modèle.modèle.Pokemon;
 
@@ -29,13 +33,17 @@ public class ListAdapteur extends RecyclerView.Adapter<ListAdapteur.ViewHolder>
             // each data item is just a string in this case
             TextView txtHeader;
             TextView txtFooter;
+            ImageView imageView;
             View layout;
+
 
             ViewHolder(View v) {
                 super(v);
                 layout = v;
                 txtHeader = (TextView) v.findViewById(R.id.firstLine);
                 txtFooter = (TextView) v.findViewById(R.id.secondLine);
+                imageView = (ImageView) v.findViewById(R.id.icon);
+
             }
         }
 
@@ -77,6 +85,10 @@ public class ListAdapteur extends RecyclerView.Adapter<ListAdapteur.ViewHolder>
         // - replace the contents of the view with that element
         final Pokemon currentPokemon= values.get(position);
         holder.txtHeader.setText(currentPokemon.getName());
+            Glide.with(holder.imageView)
+                    .load(Constant.IMAGEPNG + (position+1) + ".png")
+                    .into(holder.imageView);
+
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
