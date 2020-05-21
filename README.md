@@ -27,4 +27,6 @@ Consigne :
 
 -Stockage de données en cache
 
+Vous trouverez des screen de l'écran contenant les listes dans le dossier image
+
 
