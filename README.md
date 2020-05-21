@@ -17,6 +17,8 @@ Prérequis :
 -Glide 
 
 
+
+
 Consigne :
 
 -Ecran avec une liste d'éléments
@@ -26,6 +28,9 @@ Consigne :
 -Appel Webservice à une API Rest
 
 -Stockage de données en cache
+
+
+
 
 Vous trouverez des screen de l'écran contenant les listes dans le dossier image
 
